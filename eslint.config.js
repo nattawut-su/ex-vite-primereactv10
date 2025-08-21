@@ -1,13 +1,13 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
-import { globalIgnores } from 'eslint/config'
+import js from '@eslint/js';
+import globals from 'globals';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import tseslint from 'typescript-eslint';
+import { globalIgnores } from 'eslint/config';
 
 // เพิ่มสองตัวนี้เพื่อให้ทำงานกับ Prettier
-import eslintConfigPrettier from 'eslint-config-prettier'
-import prettierPlugin from 'eslint-plugin-prettier'
+import eslintConfigPrettier from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
 
 export default tseslint.config([
   // ไฟล์/โฟลเดอร์ที่อยากให้ ESLint มองข้าม
@@ -42,4 +42,4 @@ export default tseslint.config([
 
   // ต้องใส่ "ท้ายสุด" เพื่อปิดกฎ ESLint ที่ชนกับ Prettier
   eslintConfigPrettier,
-])
+]);

@@ -11,11 +11,11 @@ import { PrimeReactProvider } from 'primereact/api';
 import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-        <PrimeReactProvider>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </PrimeReactProvider>
-    </StrictMode>,
+  <StrictMode>
+    <PrimeReactProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PrimeReactProvider>
+  </StrictMode>,
 );
