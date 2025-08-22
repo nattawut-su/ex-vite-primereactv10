@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 import Pages from 'vite-plugin-pages';
+
 export default defineConfig({
   plugins: [
     react(),
@@ -38,10 +40,17 @@ export default defineConfig({
   server: {
     host: 'localhost',
     port: 3000,
-    open: true,
     strictPort: true,
     hmr: {
       overlay: false,
+    },
+  },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@layouts': path.resolve(__dirname, 'src/layouts'),
+      '@elements': path.resolve(__dirname, 'src/elements'),
     },
   },
 });

@@ -20,7 +20,10 @@
       ],
       "@layouts/*": [
         "layouts/*"
-      ]
+      ],
+      "@elements/*": [
+        "elements/*"
+      ],
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
