@@ -1,14 +1,25 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import Pages from 'vite-plugin-pages';
-
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     Pages({
       extensions: ['tsx', 'jsx'],
       dirs: 'src/pages',
+      importMode: 'async',
+      resolver: 'react',
+      routeBlockLang: 'json5',
+      extendRoute(route) {
+        // ⭐ แปลง path "_404" ให้กลายเป็น path "*"
+        if (route.path === '_404') {
+          return {
+            ...route,
+            path: '*',
+          };
+        }
+        return route;
+      },
     }),
   ],
   build: {
