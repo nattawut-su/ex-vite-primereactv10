@@ -1,4 +1,4 @@
-export type User = { id: number; name: string; email: string };
+import type { User } from '../model/User';
 let seq = 3;
 export const db = {
   users: [

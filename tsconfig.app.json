@@ -24,6 +24,9 @@
       "@elements/*": [
         "elements/*"
       ],
+      "@lib/*": [
+        "lib/*"
+      ],
     },
     /* Bundler mode */
     "moduleResolution": "bundler",

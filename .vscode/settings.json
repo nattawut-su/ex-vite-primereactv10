@@ -14,6 +14,9 @@
         "typescript",
         "typescriptreact"
     ],
+    "[typescript]": {
+        "editor.tabSize": 2,
+    },
     "typescript.suggest.autoImports": true,
     "typescript.preferences.importModuleSpecifier": "non-relative",
     "javascript.suggest.autoImports": true,

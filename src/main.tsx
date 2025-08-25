@@ -9,13 +9,27 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { PrimeReactProvider } from 'primereact/api';
 import { BrowserRouter } from 'react-router-dom';
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { enableMocking } from './bootstrap/enableMocking';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <PrimeReactProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </PrimeReactProvider>
-  </StrictMode>,
-);
+const queryClient = new QueryClient();
+
+async function bootstrap() {
+  await enableMocking();
+
+  enableMocking().then(() => {
+    createRoot(document.getElementById('root')!).render(
+      <StrictMode>
+        <QueryClientProvider client={queryClient}>
+          <PrimeReactProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </PrimeReactProvider>
+        </QueryClientProvider>
+      </StrictMode>,
+    );
+  });
+}
+
+bootstrap();

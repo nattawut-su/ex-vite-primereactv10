@@ -1,15 +1,15 @@
 import React from 'react';
 import { ElementView } from '@elements/crud/CrudElement';
 
-import { Mode } from '../../model/mode';
+import { Mode } from '@lib/model/modeBase';
 
 function CrudPage() {
-  const [mode, setMode] = React.useState<Mode>('view');
+  const [mode, setMode] = React.useState<Mode>('V');
 
   return (
     <React.Fragment>
-      {mode === 'view' && ElementView.getModeView({ mode, setMode })}
-      {(mode === 'create' || mode === 'edit') && ElementView.getModeSave({ mode, setMode })}
+      {mode === 'V' && ElementView.getModeView({ mode, setMode })}
+      {(mode === 'I' || mode === 'U') && ElementView.getModeSave({ mode, setMode })}
     </React.Fragment>
   );
 }
