@@ -13,3 +13,7 @@ primereact v10 --> https://primereact.org/
 `npm run dev` data is Mock.
 
 `npm run dev:integration` data is Real.
+
+## vs code recommendations extension
+
+`@recommended` in extension search input
