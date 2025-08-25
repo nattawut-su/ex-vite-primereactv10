@@ -1,13 +1,17 @@
 import React from 'react';
-import { header as cHeader } from '@elements/crud/Header';
+import { ElementView } from '@elements/crud/CrudElement';
 
-function crudPage() {
+import { Mode } from '../../model/mode';
+
+function CrudPage() {
+  const [mode, setMode] = React.useState<Mode>('view');
+
   return (
     <React.Fragment>
-      {cHeader}
-      <div>WECOME +.+ crudPage</div>
+      {mode === 'view' && ElementView.getModeView({ mode, setMode })}
+      {(mode === 'create' || mode === 'edit') && ElementView.getModeSave({ mode, setMode })}
     </React.Fragment>
   );
 }
 
-export default crudPage;
+export default CrudPage;
