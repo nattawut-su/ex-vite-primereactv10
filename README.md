@@ -27,14 +27,14 @@ npm run dev
 
 Run in development mode (data is Real)
 
-```sh
-npm run dev:integration
-```
-
 - Create your .env.integration file on root folder
 
 ```sh
 cp .env.integration.example .env.integration
+```
+
+```sh
+npm run dev:integration
 ```
 
 - In the .env.integration file, edit the VITE API_BASE_URL to the actual api url.
