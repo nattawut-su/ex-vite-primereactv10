@@ -6,7 +6,7 @@ export async function enableMocking() {
   // onUnhandledRequest: "bypass" จะไม่ throw เมื่อปล่อยให้เรียก backend จริง
   await worker.start({
     serviceWorker: {
-      url: '/mockServiceWorker.js', // Vite จะเสิร์ฟให้หลัง build MSW
+      url: '/mockServiceWorker.js',
     },
     onUnhandledRequest: 'bypass',
   });
